@@ -29,9 +29,11 @@
 
     .container-fluid{
       background-color:#DCDCDC;
-      padding:10px;
+      padding-top:10px;
+      padding-bottom:10px;
       padding-left:20px;
       margin-top:-10px;
+      margin-bottom:-10px;
     }
 
     .navbar-brand{
