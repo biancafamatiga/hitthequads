@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 05:11 PM
+-- Generation Time: Nov 18, 2023 at 03:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -48,7 +48,8 @@ CREATE TABLE `facilities` (
 INSERT INTO `facilities` (`id`, `name`, `contactperson`, `email`, `phone`, `date`, `time`, `type`, `purpose`, `participants`, `request`) VALUES
 (2, 'feu', 'Bianca Ysabel Reta Famatiga', '202111318@fit.edu.ph', '63919001281', '2023-11-04', '10:42:00', 'Tea House', '', 4, 'na'),
 (3, 'test', 'test', 'bfmtg313@gmail.com', '09431313133', '2023-11-25', '11:21:00', 'Bulwagan Ninoy', '', 5, 'wala'),
-(4, 'test', 'test', 'bfmtg313@gmail.com', '09431313133', '2023-11-25', '11:25:00', 'Amphitheater', 'Recreational', 5, 'wala');
+(4, 'test', 'test', 'bfmtg313@gmail.com', '09431313133', '2023-11-25', '11:25:00', 'Amphitheater', 'Recreational', 5, 'wala'),
+(5, 'feu1', 'Bianca Ysabel Reta Famatiga', '202111318@fit.edu.ph', '63919001281', '2023-11-11', '10:18:00', 'Amphitheater', 'Seminar/Conference', 4, 'na');
 
 --
 -- Indexes for dumped tables
@@ -68,7 +69,7 @@ ALTER TABLE `facilities`
 -- AUTO_INCREMENT for table `facilities`
 --
 ALTER TABLE `facilities`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

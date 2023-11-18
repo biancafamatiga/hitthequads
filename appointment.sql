@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 05:11 PM
+-- Generation Time: Nov 18, 2023 at 03:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -40,6 +40,14 @@ CREATE TABLE `appointment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `appointment`
+--
+
+INSERT INTO `appointment` (`id`, `name`, `organization`, `email`, `phone`, `date`, `time`, `purpose`, `questions`) VALUES
+(2, 'test', 'test', 'test@gmail.com', '09121542121', '2023-11-04', '09:00:00', 'TEST', 'TEST'),
+(3, 'test', 'feu', '202111318@fit.edu.ph', '09190012813', '2023-11-04', '10:16:00', 'thesis', 'wala');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -57,7 +65,7 @@ ALTER TABLE `appointment`
 -- AUTO_INCREMENT for table `appointment`
 --
 ALTER TABLE `appointment`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

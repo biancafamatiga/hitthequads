@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2023 at 05:11 PM
+-- Generation Time: Nov 18, 2023 at 03:19 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.1.17
 
@@ -45,7 +45,9 @@ CREATE TABLE `fieldtrip` (
 --
 
 INSERT INTO `fieldtrip` (`id`, `name`, `contactperson`, `email`, `phone`, `date`, `time`, `participants`, `gradelevel`, `request`) VALUES
-(2, 'dfdsfd', 'Bianca Ysabel Reta Famatiga', '202111318@fit.edu.ph', '+6391900128', '2023-11-03', '10:11:00', 12, '12', 'sasa');
+(2, 'dfdsfd', 'Bianca Ysabel Reta Famatiga', '202111318@fit.edu.ph', '+6391900128', '2023-11-03', '10:11:00', 12, '12', 'sasa'),
+(4, 'FEU', 'test', 'test@gmail.com', '09999099099', '2023-11-25', '10:01:00', 12, '12', ''),
+(5, 'admu', 'tst', 'test@gmail.com', '09999099099', '2023-11-11', '10:18:00', 12, '12', 'wala');
 
 --
 -- Indexes for dumped tables
@@ -65,7 +67,7 @@ ALTER TABLE `fieldtrip`
 -- AUTO_INCREMENT for table `fieldtrip`
 --
 ALTER TABLE `fieldtrip`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -29,7 +29,7 @@ class Mod extends CI_Model {
         $q = $this->db->query('SELECT * FROM appointment');
         return $q->result();
     }
-    
+
     public function add_appointment($data){
         $this->db->insert('appointment', $data);
         return true;

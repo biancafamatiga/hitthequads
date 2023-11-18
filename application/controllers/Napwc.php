@@ -144,7 +144,7 @@ class Napwc extends CI_Controller {
 
         if($this->input->post('submit'))
     {
-       
+
         $data['name']=$this->input->post('name');
         $data['organization']=$this->input->post('organization');
         $data['email']=$this->input->post('email');
@@ -153,11 +153,11 @@ class Napwc extends CI_Controller {
         $data['time']=$this->input->post('time');
         $data['purpose']=$this->input->post('purpose');
         $data['questions']=$this->input->post('questions');
-        
+
         $response=$this->Mod->add_appointment($data); 
 
     }
-    }   
+    } 
 
     //delete
 
