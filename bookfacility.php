@@ -71,8 +71,9 @@
     
     </div>
       <!--form-->
+      <h1> Book a Facility </h1>
       <div class="container"> 
-        <h1> Book a Facility </h1>
+     
       <form action="http://localhost/quads/index.php/napwc/add_facilities" method = "post">
         <h4> Contact Information </h4>
   <div class="mb-3">
