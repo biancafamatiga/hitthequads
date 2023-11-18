@@ -1,4 +1,8 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
        body {
@@ -10,6 +14,7 @@
             backdrop-filter: blur(7px);
             
         }
+
       .container {
           background-color: rgba(255, 255, 255, 0.6);
           border-radius: 6px; 
@@ -19,6 +24,7 @@
           width: 100%;x
           
       }
+
       h1{
             color:#204c37;
             text-align:center;
@@ -30,6 +36,7 @@
       h4{
         text-align:center;
       }
+
       .container form button {
             display: block;
             margin: 0 auto; 
@@ -40,22 +47,27 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         
         .mb-4 {
             display: flex;
             align-items: center; 
             margin-bottom: 15px;
         }
+
         .mb-4 label {
             margin-bottom: 0; 
             margin-left: 20px; 
         }
+
         .mb-4 input {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 2px;
         }
+
         </style>
+
       
 </head>
 <body>
