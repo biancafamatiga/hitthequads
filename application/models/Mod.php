@@ -2,6 +2,8 @@
 
 class Mod extends CI_Model {
 
+    
+    
     // admin view table
     public function show_fieldtrip(){
         $q = $this->db->query('SELECT * FROM fieldtrip');
@@ -50,5 +52,61 @@ class Mod extends CI_Model {
     }
 
 
+    // search 
+
+    public function search_fieldtrip($keyword){
+        $this->db->like('name', $keyword);
+        $this->db->or_like('contactperson', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('phone', $keyword);
+        $this->db->or_like('date', $keyword);
+        $this->db->or_like('time', $keyword);
+        $this->db->or_like('participants', $keyword);
+        $this->db->or_like('gradelevel', $keyword);
+        $this->db->or_like('request', $keyword);
+        
+        $q = $this->db->get('fieldtrip');
+
+        return $q->result();
+
+    }
+
+    public function search_facilities($keyword){
+        $this->db->like('name', $keyword);
+        $this->db->or_like('contactperson', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('phone', $keyword);
+        $this->db->or_like('date', $keyword);
+        $this->db->or_like('time', $keyword);
+        $this->db->or_like('type', $keyword);
+        $this->db->or_like('purpose', $keyword);
+        $this->db->or_like('participants', $keyword);
+        $this->db->or_like('request', $keyword);
+        
+        $q = $this->db->get('facilities');
+
+        return $q->result();
+
+    }
+
+
+    public function search_appointment($keyword){
+        $this->db->like('name', $keyword);
+        $this->db->or_like('organization', $keyword);
+        $this->db->or_like('email', $keyword);
+        $this->db->or_like('phone', $keyword);
+        $this->db->or_like('date', $keyword);
+        $this->db->or_like('time', $keyword);
+        $this->db->or_like('purpose', $keyword);
+        $this->db->or_like('questions', $keyword);
+        
+        $q = $this->db->get('appointment');
+
+        return $q->result();
+
+    }
 
 }
+
+
+
