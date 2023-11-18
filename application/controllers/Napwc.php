@@ -5,8 +5,11 @@ class Napwc extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('Mod'); 
+        $this->load->model('Mod');
+        $this->load->helper('url'); 
     }
+
+    // views/webpages
 
     public function index(){
         $this->load->view('header');
@@ -36,6 +39,8 @@ class Napwc extends CI_Controller {
         $this->load->view('header');
         $this->load->view('fieldtrip');
         $this->load->view('footer');
+
+   
     }
 
     public function appointment(){
@@ -50,24 +55,14 @@ class Napwc extends CI_Controller {
         $this->load->view('footer');
     }
 
-    
-
-    // public function admin_fieldtrip(){
-    //     $this->load->view('admin_nav');
-    //     $this->load->view('admin_fieldtrip');
-    // }
-
-    // public function admin_facilities(){
-    //     $this->load->view('admin_nav');
-    //     $this->load->view('admin_facilities');
-    // }
-
-
-    // functions
-
     public function admin(){
         $this->load->view('admin_nav');
     }
+
+    
+    // functions
+
+    // [1] Show Table
 
     // show fieldtrip table in admin view
     public function admin_fieldtrip($a = ''){
@@ -79,6 +74,30 @@ class Napwc extends CI_Controller {
         $this->load->view('admin_fieldtrip', $data);
     }
 
+    // show facilities table in admin view
+
+    public function admin_facilities($b= ''){
+        $this->load->view('admin_nav');
+        $data = array(
+            'item' => $this->Mod->show_facilities($b)
+        );
+        $this->load->view('admin_facilities', $data);
+    }
+
+    // show facilities table in admin view
+
+    public function admin_appointment($c= ''){
+        $this->load->view('admin_nav');
+        $data = array(
+            'item' => $this->Mod->show_appointment($c)
+        );
+        $this->load->view('admin_appointment', $data);
+    }
+
+
+    // [2] Create - Insert Data in Table
+
+    // insert fieldtrip data
 
     public function add_fieldtrip(){
         if($this->input->post('submit'))
@@ -99,15 +118,7 @@ class Napwc extends CI_Controller {
         
     }
 
-    // show facilities table in admin view
-
-    public function admin_facilities($b= ''){
-        $this->load->view('admin_nav');
-        $data = array(
-            'item' => $this->Mod->show_facilities($b)
-        );
-        $this->load->view('admin_facilities', $data);
-    }
+    // insert facilities data
 
     public function add_facilities(){
 
@@ -130,15 +141,7 @@ class Napwc extends CI_Controller {
 
     }
 
-    // show facilities table in admin view
-
-    public function admin_appointment($c= ''){
-        $this->load->view('admin_nav');
-        $data = array(
-            'item' => $this->Mod->show_appointment($c)
-        );
-        $this->load->view('admin_appointment', $data);
-    }
+    // insert appointment data
 
     public function add_appointment(){
 
@@ -159,7 +162,7 @@ class Napwc extends CI_Controller {
     }
     } 
 
-    //delete
+    // [3] Delete Data
 
     public function delete_fieldtrip($id)
     {
@@ -177,6 +180,28 @@ class Napwc extends CI_Controller {
         $this->admin_facilities();
     }
 
+    // [4] Search Data
+
+    public function search_fieldtrip(){
+        $keyword = $this->input->post('search_key');
+        $data['item'] = $this->Mod->search_fieldtrip($keyword);
+        $this->load->view('admin_fieldtrip', $data);
+
+    }
+
+    public function search_facilities(){
+        $keyword = $this->input->post('search_key');
+        $data['item'] = $this->Mod->search_facilities($keyword);
+        $this->load->view('admin_facilities', $data);
+
+    }
+
+    public function search_appointment(){
+        $keyword = $this->input->post('search_key');
+        $data['item'] = $this->Mod->search_appointment($keyword);
+        $this->load->view('admin_appointment', $data);
+
+    }
 
 
 }
