@@ -55,9 +55,16 @@ class Napwc extends CI_Controller {
         $this->load->view('footer');
     }
 
-    public function admin(){
-        $this->load->view('admin_nav');
+    public function loginview(){
+        $this->load->view('login');
+        $this->load->view('footer');
     }
+
+    public function signupview(){
+        $this->load->view('signup');
+        $this->load->view('footer');
+    }
+
 
     
     // functions
