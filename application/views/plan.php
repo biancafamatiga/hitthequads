@@ -29,7 +29,7 @@
             text-decoration: none;
             color: #fff;
             background-color: #204c37;
-            border-radius: 20px;
+            border-radius: 5px;
             max-width:400px;
         }
 

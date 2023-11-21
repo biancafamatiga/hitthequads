@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-              body {
+
+       body {
             background-image: url('https://pais.bmb.gov.ph/pas/bmb_assets2/img/website/slider/lagoon1.jpg'); 
             background-size: cover;
             background-repeat: no-repeat; 
@@ -14,7 +15,6 @@
             backdrop-filter: blur(7px);
             
         }
-
       .container {
           background-color: rgba(255, 255, 255, 0.6);
           border-radius: 6px; 
@@ -32,9 +32,8 @@
             padding-top:20px;
             padding-bottom:25px;
         }
-  
 
-      .container form button {
+        .container form button {
             display: block;
             margin: 0 auto; 
             background-color: #204c37; 
@@ -44,72 +43,67 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
         
         .mb-4 {
             display: flex;
             align-items: center; 
             margin-bottom: 15px;
         }
-
         .mb-4 label {
             margin-bottom: 0; 
             margin-left: 20px; 
         }
-
         .mb-4 input {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 2px;
         }
-
               
       h4{
         text-align:center;
       }
-
       footer a:hover {
             color: #fff;
-        }
+      }
         </style>
 </head>
 <body>
     
     </div>
-    <h1> Book a Facility </h2>
       <!--form-->
+      <h1> Book a Facility </h1>
       <div class="container"> 
-      
-      <form action=" " method = "post">
+     
+      <form action="http://localhost/quads/index.php/napwc/add_facilities" method = "post">
         <h4> Contact Information </h4>
   <div class="mb-3">
-    <label for="pokename" class="form-label">Name of School/Organization</label>
+    <label for="name" class="form-label">Name of School/Organization</label>
     <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="">
   </div>
   <div class="mb-3">
-    <label for="typeone" class="form-label">Contact Person</label>
+    <label for="contactperson" class="form-label">Contact Person</label>
     <input type="text" class="form-control" name="contactperson" id="contactperson">
   </div>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Email Address</label>
+    <label for="email" class="form-label">Email Address</label>
     <input type="email" class="form-control" name="email" id="email">
   </div>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Phone Number</label>
+    <label for="phone" class="form-label">Phone Number</label>
     <input type="text" class="form-control" name="phone" id="phone">
   </div>
   <h4> Booking Details </h4>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Preferred Date</label>
+    <label for="date" class="form-label">Preferred Date</label>
     <input type="date" class="form-control" name="date" id="date">
   </div>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Preferred Time</label>
+    <label for="time" class="form-label">Preferred Time</label>
     <input type="time" class="form-control" name="time" id="time">
   </div>
   <div class="mb-3">
     <div class="form-group">
-    <label for="typetwo" class="form-label">Type of Facility</label> <br>
+    <label for="type" class="form-label">Type of Facility</label> <br>
     <input type="radio" class="form-check-input" name="type" id="type" value="Amphitheater"> Ampitheater  <br>
     <input type="radio" class="form-check-input" name="type" id="type" value="Tea House"> Tea House <br>
     <input type="radio" class="form-check-input" name="type" id="type" value="Fishing Village"> Fishing Village <br>
@@ -119,14 +113,13 @@
   </div>
   <div class="mb-3">
     <div class="form-group">
-    <label for="typetwo" class="form-label">Purpose of Booking</label> <br>
+    <label for="purpose" class="form-label">Purpose of Booking</label> <br>
     <input type="radio" class="form-check-input" name="purpose" id="purpose" value="Commercial Filming/Photography"> Commercial Filming/Photography <br>
     <input type="radio" class="form-check-input" name="purpose" id="purpose" value="Photoshoot"> Commercial Filming/Photography <br>
     <input type="radio" class="form-check-input" name="purpose" id="purpose" value="Seminar/Conference"> Seminar/Conference <br>
     <input type="radio" class="form-check-input" name="purpose" id="purpose" value="Recreational"> Recreational <br>
     <input type="radio" class="form-check-input" name="purpose" id="purpose" value="Birthday"> Birthday<br>
     <input type="radio" class="form-check-input" name="purpose" id="purpose" value="Wedding"> Wedding <br>
-    <input type="text" class="form-control" name="purpose" id="purpose" placeholder="Other">
     </div>
   </div>
   <div class="mb-3">
@@ -135,19 +128,18 @@
   </div>
   <div class="mb-3">
     <label for="typetwo" class="form-label">Any special requests/accomodations needed? (optional) </label>
-    <input type="text" class="form-control" name="requests" id="requests">
+    <input type="text" class="form-control" name="request" id="request">
   </div>
-  <div class="mb-4">
+  <!-- <div class="mb-3">
     <input type="checkbox" class="form-check-input" name="agree" id="agree">
     <label for="typetwo" class="form-label">I agree to abide by the rules and regulations of Ninoy Aquino Parks and Wildlife Center's facilites.
     </label>
-  </div>
+  </div> -->
   
   
-  <button type="submit" class="btn btn-primary" value="save" name="save">Submit</button>
+  <button type="submit" class="btn btn-primary" value="submit" name="submit">Submit</button> <br> <br> <br> <br>
 </form>
-     
+      </div>
 </div>
-<br><br><br><br>
 </body>
 </html>

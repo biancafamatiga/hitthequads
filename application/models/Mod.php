@@ -106,6 +106,21 @@ class Mod extends CI_Model {
 
     }
 
+    public function loginpro($Email = '', $Password = '')
+    {
+        $data = array(
+            'Email' => $Email,
+            'Password' => $Password
+        );
+
+        $query = $this->db->get_where('admin', $data);
+        if ($query->num_rows() == 0) {
+            return false; 
+        } else {
+            return $query->row();
+        }
+        
+}
 }
 
 

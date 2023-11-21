@@ -59,7 +59,8 @@
         }
 
         .button:hover {
-            background-color: #407a5e; 
+            background-color: #407a5e;
+            color:white;
         }
 
     </style>

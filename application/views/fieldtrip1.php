@@ -105,11 +105,11 @@
         <label for="typetwo" class="form-label">Any special requests/comments? (optional) </label>
         <input type="text" class="form-control" name="request" id="request">
       </div>
-      <!-- <div class="mb-4">
+      <div class="mb-4">
         <input type="checkbox" class="form-check-input" name="agree" id="agree">
         <label for="typetwo" class="form-label">I agree to abide by the rules and regulations of Ninoy Aquino Parks and Wildlife Center for the field trip.  </label>
         
-      </div> -->
+      </div>
       <button type="submit" class="btn btn-primary" value="submit" name="submit">Submit</button>
 </form>
       </div>

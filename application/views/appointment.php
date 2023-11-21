@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
              body {
@@ -14,7 +10,6 @@
             backdrop-filter: blur(7px);
             
         }
-
       .container {
           background-color: rgba(255, 255, 255, 0.6);
           border-radius: 6px; 
@@ -24,7 +19,6 @@
           width: 100%;x
           
       }
-
       h1{
             color:#204c37;
             text-align:center;
@@ -36,7 +30,6 @@
       h4{
         text-align:center;
       }
-
       .container form button {
             display: block;
             margin: 0 auto; 
@@ -47,25 +40,21 @@
             border-radius: 5px;
             cursor: pointer;
         }
-
         
         .mb-4 {
             display: flex;
             align-items: center; 
             margin-bottom: 15px;
         }
-
         .mb-4 label {
             margin-bottom: 0; 
             margin-left: 20px; 
         }
-
         .mb-4 input {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 2px;
         }
-
         footer a:hover {
             color: #fff;
         }
@@ -78,48 +67,48 @@
       <!--form-->
       <div class="container"> 
        
-      <form action=" " method = "post">
+      <form action="http://localhost/quads/index.php/napwc/add_appointment" method = "post">
         <h4> Contact Information </h4>
   <div class="mb-3">
-    <label for="pokename" class="form-label">Name</label>
-    <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" name="name" id="name" aria-describedby="emailHelp" placeholder="" required>
   </div>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Email Address</label>
-    <input type="email" class="form-control" name="email" id="email">
+    <label for="organization" class="form-label">Organization/Company/School</label>
+    <input type="text" class="form-control" name="organization" id="organization" aria-describedby="emailHelp" placeholder="" required>
   </div>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Phone Number</label>
-    <input type="text" class="form-control" name="phone" id="phone">
+    <label for="email" class="form-label">Email Address</label>
+    <input type="email" class="form-control" name="email" id="email" required>
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Phone Number</label>
+    <input type="text" class="form-control" name="phone" id="phone" required>
   </div>
   <h4> Appointment Details </h4>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Preferred Date</label>
-    <input type="date" class="form-control" name="date" id="date">
+    <label for="date" class="form-label">Preferred Date</label>
+    <input type="date" class="form-control" name="date" id="date" required>
   </div>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Preferred Time</label>
-    <input type="time" class="form-control" name="time" id="time">
+    <label for="time" class="form-label">Preferred Time</label>
+    <input type="time" class="form-control" name="time" id="time" required>
   </div>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Purpose of Appointment</label>
-    <input type="text" class="form-control" name="purpose" id="purpose">
+    <label for="purpose" class="form-label">Purpose of Appointment</label>
+    <input type="text" class="form-control" name="purpose" id="purpose" required>
   </div>
   <div class="mb-3">
-    <label for="typetwo" class="form-label">Specific topics/questions </label>
-    <input type="text" class="form-control" name="topics" id="topics">
+    <label for="topics" class="form-label">Specific topics/questions </label>
+    <input type="text" class="form-control" name="questions" id="questions" required>
   </div>
-  <div class="mb-3">
-    <label for="typetwo" class="form-label">Any special requests/comments? (optional) </label>
-    <input type="text" class="form-control" name="topics" id="topics">
-  </div>
-  <div class="mb-4">
+  <!-- <div class="mb-4">
     <input type="checkbox" class="form-check-input" name="agree" id="agree">
-    <label for="typetwo" class="form-label"> I understand that this appointment is subject to availability, 
+    <label for="agree" class="form-label"> I understand that this appointment is subject to availability, 
         and I agree to comply with the rules and regulations of Ninoy Aquino Parks and Wildlife Center during my visit.
     </label>
-  </div>
-  <button type="submit" class="btn btn-primary" value="save" name="save">Submit</button>
+  </div> -->
+  <button type="submit" class="btn btn-primary" value="submit" name="submit">Submit</button>
 </form>
       </div>
 </div><br><br><br><br>

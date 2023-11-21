@@ -56,11 +56,13 @@ class Napwc extends CI_Controller {
     }
 
     public function loginview(){
+        $this->load->view('header');
         $this->load->view('login');
         $this->load->view('footer');
     }
 
     public function signupview(){
+        $this->load->view('header');
         $this->load->view('signup');
         $this->load->view('footer');
     }
@@ -109,21 +111,55 @@ class Napwc extends CI_Controller {
     public function add_fieldtrip(){
         if($this->input->post('submit'))
     {
-       
-        $data['name']=$this->input->post('name');
-        $data['contactperson']=$this->input->post('contactperson');
-        $data['email']=$this->input->post('email');
-        $data['phone']=$this->input->post('phone');
-        $data['date']=$this->input->post('date');
-        $data['time']=$this->input->post('time');
-        $data['participants']=$this->input->post('participants');
-        $data['gradelevel']=$this->input->post('gradelevel');
-        $data['request']=$this->input->post('request');
-        $response=$this->Mod->add_fieldtrip($data); 
+        $this->form_validation->set_rules('name', 'Name', 'required');
+    	$this->form_validation->set_rules('contactperson', 'contactperson', 'required');
+    	$this->form_validation->set_rules('email', 'Email', 'required');
+		$this->form_validation->set_rules('phone', 'Phone', 'required|numeric');
+		$this->form_validation->set_rules('date', 'Date', 'required');
+    	$this->form_validation->set_rules('time', 'Time', 'required');
+        $this->form_validation->set_rules('participants', 'Participants', 'required');
+    	$this->form_validation->set_rules('gradelevel', 'GradeLevel', 'required');
+        $this->form_validation->set_rules('request', 'Request', 'required');
+        if ($this->form_validation->run() == false) 
+		{
+        	$this->load->view('fieldtrip');
+    	} 
+		else 
+		{
+        $data = array(
+            'Name' => $this->input->post('name'),
+            'contactperson' => $this->input->post('contactperson'),
+            'Email' => $this->input->post('email'),
+			'Phone' => $this->input->post('phone'),
+            'Date' => $this->input->post('date'),
+			'Time' => $this->input->post('time'),
+            'Participants' => $this->input->post('participants'),
+			'GradeLevel' => $this->input->post('gradelevel'),
+            'Request' => $this->input->post('request'),
+        );
+
+        $this->Mod->add_fieldtrip($data);
+        
+		$this->load->view('popup');
+        $this->load->view('header');
+        $this->load->view('fieldtrip');
+        $this->load->view('footer');
+
+        }}
+
+        else{
+            $this->load->view('header');
+            $this->load->view('fieldtrip');
+            $this->load->view('footer');
+    
+        }
+        
 
     }
+
+
         
-    }
+    
 
     // insert facilities data
 
@@ -142,11 +178,26 @@ class Napwc extends CI_Controller {
         $data['purpose']=$this->input->post('purpose');
         $data['participants']=$this->input->post('participants');
         $data['request']=$this->input->post('request');
-        $response=$this->Mod->add_facilities($data); 
+
+        $this->Mod->add_facilities($data);
+
+        
+		$this->load->view('popup');
+        $this->load->view('header');
+        $this->load->view('bookfacility');
+        $this->load->view('footer');
+
+        }
+        else{
+            $this->load->view('header');
+            $this->load->view('bookfacility');
+            $this->load->view('footer');
+    
+        }
 
     }
 
-    }
+    
 
     // insert appointment data
 
@@ -164,8 +215,19 @@ class Napwc extends CI_Controller {
         $data['purpose']=$this->input->post('purpose');
         $data['questions']=$this->input->post('questions');
 
-        $response=$this->Mod->add_appointment($data); 
+        $this->Mod->add_appointment($data);
 
+        
+		$this->load->view('popup');
+        $this->load->view('header');
+        $this->load->view('appointment');
+        $this->load->view('footer');
+
+    }
+    else {
+        $this->load->view('header');
+        $this->load->view('appointment');
+        $this->load->view('footer');
     }
     } 
 
@@ -210,7 +272,28 @@ class Napwc extends CI_Controller {
 
     }
 
+    public function loginpro(){
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('password', 'Password', 'required');
+
+        if ($this->form_validation->run() == false) {
+            $this->load->view('login');
+        } else {
+            $data = array(
+                'Email' => $this->input->post('email'),
+                'Password' => $this->input->post('password')
+            );
+            $result = $this->mod->loginpro($data['Email'], $data['Password']);
+            if ($result) {
+                    $this->load->view('admin_nav');
+            
+            } else {
+                $this->load->view('header');
+                $this->load->view('login');
+            }
+        }
+    }
+
 
 }
-
 ?>
