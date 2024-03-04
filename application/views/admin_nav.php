@@ -1,101 +1,130 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <style>
-        
-    body{
-        font-family: 'Poppins', sans-serif;
-        text-align:justify;
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  margin-left: 300px; 
+  
+
+}
+
+.sidenav {
+  height: 100%;
+  width: 280px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #12372A;
+  overflow-x: hidden;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  background-image: rgba(32, 76, 55, 0.7);
+
+}
+
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #C7C8CC;
+  display: block;
+}
+
+.sidenav a:hover {
+  background-color: #789461;
+  width:200px;
+  display: block;
+}
+
+.main {
+  margin-left: 390px; 
+  font-size: 18px; 
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.profile-photo {
+  width: 120px; 
+  height: 120px; 
+  border-radius: 50%; 
+  margin-bottom: 20px; 
+  margin-top: 20px;
+}
+
+.logout-link {
+  margin-top: auto; 
+  margin-bottom:70px;
+  color:red;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #204c37;
+}
+
+.nav-link:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #789461;
+  width:200px;
+}
+
+.nav-link{
+      color:#C7C8CC;
+      font-size:20px;
     }
 
-    .container{
-        padding:20px;
-    }
+p{
+  font-weight:600;
+  color:#C7C8CC;
+  font-size:20px;
+}
 
-    footer{
-        position:fixed;
-        left: 100;
-        bottom: 0;
-        width:100%
-        
-    }
-
-    .container-fluid{
-      background-color:#DCDCDC;
-      padding:10px;
-      padding-left:20px;
-      margin-top:-10px;
-    }
-
-    .navbar-brand{
-      font-weight:700;
-    }
-
-    .navbar-brand:hover{
-      color:#5E716A
-    }
-
-    .nav-link{
-      font-weight:600;
-    }
-
-    .nav-link:hover{
-       color: #2A3439
-    }
-
-    h1,h2{
-      font-weight:600;
-    }
-
-    p{
-      font-size:16px;
-    }
-
-    #navbarNav{
-      margin:auto;
-      justify-content:center;
-      margin-left:-100px;
-      font-size:11px;
-    }
-
-   
-    
-
-    
-
-    
-
-        </style>
+</style>
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand">ADMIN</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="http://localhost/quads/index.php/napwc/admin_fieldtrip">FIELD TRIP</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost/quads/index.php/napwc/admin_facilities">FACILITIES</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost/quads/index.php/napwc/admin_appointment">APPOINTMENT</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://localhost/quads/index.php/napwc/index">LOGOUT</a>
-        </li>
-      </ul>
+
+
+<div class="sidenav">
+  <p>NAPWC</p>
+  <img class="profile-photo" src="https://i.pinimg.com/474x/81/8a/1b/818a1b89a57c2ee0fb7619b95e11aebd.jpg" alt="Profile Photo">
+  <p>Admin<br><br></p>
+  <a class="nav-link" href="http://localhost/NAPWC/index.php/napwc/r_dashboard">Dashboard</a>
+  <div class="nav-link">
+     <a class="nav-link">Reservation </a>
+      <div class="dropdown-content">
+      <a href="http://localhost/NAPWC/index.php/napwc/admin_fieldtrip" class="dropdown-item">Fieldtrip</a>
+      <a href="http://localhost/NAPWC/index.php/napwc/admin_appointment" class="dropdown-item">Appointment</a>
+      <a href="http://localhost/NAPWC/index.php/napwc/admin_facilities" class="dropdown-item">Facility</a>
     </div>
-  </div>
-</nav>
+  </div>  
+  <a class="nav-link" href="http://localhost/NAPWC/index.php/napwc/cms">Content</a>
+  <a class="nav-link" href="http://localhost/NAPWC/index.php/napwc/adma">Admin</a>
+  <a class="logout-link" href="http://localhost/NAPWC/index.php/napwc/loginview">Logout</a>
+</div>
+
+
+   
+</body>
+</html> 

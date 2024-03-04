@@ -2,6 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>ADMIN</title>
   <style>
     body {
       display: flex;
@@ -14,7 +15,8 @@
     }
 
     .container {
-      flex: 1;
+      margin-top:70px;
+      padding-top:100px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -25,9 +27,9 @@
     .form-container {
       background-color: #ffffff; 
       padding: 20px;
-      border-radius: 9px; 
+      border-radius: 5px; 
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      background-color: rgba(255, 255, 255, 0.8);
+      background-color: rgba(255, 255, 255, 0.9);
       width: 600px;
     
     }
@@ -66,16 +68,20 @@
       flex: 2; 
     }
 
+    .btn-primary:hover {
+        background-color: #50623A;
+    }
+
   </style>
 </head>
 
 <body>
   <div class="container">
 
-    <form class="text-center form-container" action ="<?= base_url('index.php/napwc/loginpro');?>" method="post">
-    <h1>Welcome to NAPWC!</h1><br>
+    <form class="text-center form-container" action ="<?= base_url('index.php/napwc/r_dashboard');?>" method="post">
+    <h1>NAPWC ADMIN</h1><br>
       <div class="form-group-label">
-        <label for="Email">Email address:</label>
+        <label for="Email">Username:</label>
         <input type="email" class="form-control" name = "email" id="email" aria-describedby="emailHelp" placeholder="Enter email">
       </div>
 
@@ -83,13 +89,13 @@
         <label for="Password">Password:</label>
         <input type="password" class="form-control" name = "password" id="password" placeholder="Password">
       </div>
-      <input class = "button" type = "submit" value = "Login">
-  </form>
-      <br><button type="submit" class="btn btn-primary"><a href="http://localhost/quads/index.php/loginpro/">LOGIN</a></button>
 
-      <div style="margin-top: 15px;">
-        Don't have an account? <a href="http://localhost/quads/index.php/napwc/signupview"> Sign Up </a>
-      </div>
+      <input class = "btn btn-primary" type = "submit" value = "Login">
+
+      
+  </form>
+
+     
     </form>
   </div>
 </body>

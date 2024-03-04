@@ -10,7 +10,7 @@
       background-color: #204c37; }
      
     .container {
-      flex: 1;
+      padding-top:70px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -86,7 +86,7 @@
         <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
       </div>
 
-      <br><button type="submit" class="btn btn-primary"><a href="http://localhost/quads/index.php/napwc/loginview">Create Account</a></button><br><br>
+      <br><button type="submit" class="btn btn-primary"><a href="http://localhost/NAPWC/index.php/napwc/loginview">Create Account</a></button><br><br>
     </form>
     
   </div>

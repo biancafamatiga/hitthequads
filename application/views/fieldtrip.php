@@ -1,20 +1,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Fieldtrip</title>
     <style>
-       body {
-            background-image: url('https://pais.bmb.gov.ph/pas/bmb_assets2/img/website/slider/lagoon1.jpg'); 
-            background-size: cover;
-            background-repeat: no-repeat; 
-            margin: 0; 
-            padding: 0; 
-            backdrop-filter: blur(7px);
-            
+         body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #204c37; 
+            background: url('https://i.imgur.com/oFmr2Mu.png') center/cover no-repeat fixed;
+            background-image: rgba(32, 76, 55, 0.7);
+            padding-bottom:100px;
         }
+
       .container {
           background-color: rgba(255, 255, 255, 0.6);
           border-radius: 6px; 
           padding: 20px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
           max-width: 600px; 
           width: 100%;x
           
@@ -33,13 +33,17 @@
       .container form button {
             display: block;
             margin: 0 auto; 
-            background-color: #204c37; 
-            color: #fff; 
+            background-color: #789461;
             border: none;
-            padding: 10px 10px;
-            border-radius: 5px;
+            border-radius: 50px;
+            padding: 10px 20px;
             cursor: pointer;
         }
+
+        .container form button:hover {
+            background-color: #50623A;
+        }
+
         
         .mb-4 {
             display: flex;
@@ -55,18 +59,19 @@
             border: 1px solid #ccc;
             border-radius: 2px;
         }
+
         </style>
       
 </head>
 <body>
     
     </div>
+    <br>
     <h1> Field Trip Reservation </h2>
       <!--form-->
       <div class="container"> 
-      
   
-<form action="http://localhost/quads/index.php/napwc/add_fieldtrip" method = "post">
+    <form action="http://localhost/NAPWC/index.php/napwc/add_fieldtrip" method = "post">
         <h4> Contact Information </h4>
       <div class="mb-3">
         <label for="pokename" class="form-label">Name of School/Organization</label>
@@ -105,6 +110,12 @@
         <label for="typetwo" class="form-label">Any special requests/comments? (optional) </label>
         <input type="text" class="form-control" name="request" id="request">
       </div>
+
+      <div class="mb-3">
+        <label for="id_image" class="form-label">Upload ID Image</label>
+        <input type="file" class="form-control" name="id_image" id="id_image">
+        <small class="form-text text-muted">Please upload an image of your ID for validation purposes.</small>
+      </div>
       <!-- <div class="mb-4">
         <input type="checkbox" class="form-check-input" name="agree" id="agree">
         <label for="typetwo" class="form-label">I agree to abide by the rules and regulations of Ninoy Aquino Parks and Wildlife Center for the field trip.  </label>
@@ -115,5 +126,6 @@
       </div>
       <br><br><br><br><br>
 </div>
+
 </body>
 </html>

@@ -56,17 +56,66 @@ class Napwc extends CI_Controller {
     }
 
     public function loginview(){
-        $this->load->view('header');
         $this->load->view('login');
-        $this->load->view('footer');
     }
 
-    public function signupview(){
+    //NEW NEW NEW
+    public function user_profile() {
+    $this->load->view('header');
+    $this->load->view('user_profile');
+    $this->load->view('footer');
+    }
+
+    public function reservation() {
+    $this->load->view('header');
+    $this->load->view('reservation');
+    $this->load->view('footer');
+    }
+
+    public function sign_up() {
+    $this->load->view('header');
+    $this->load->view('sign_up');
+    $this->load->view('footer');
+    }
+
+    public function log_in() {
         $this->load->view('header');
-        $this->load->view('signup');
+        $this->load->view('log_in');
         $this->load->view('footer');
-    }
+        }
 
+    public function virtualtour() {
+        $this->load->view('header');
+        $this->load->view('virtualtour');
+        $this->load->view('footer');
+        }
+
+    public function e_flora() {
+        $this->load->view('header');
+        $this->load->view('e_flora');
+        $this->load->view('footer');
+        }
+
+
+    public function e_attractions() {
+        $this->load->view('header');
+        $this->load->view('e_attractions');
+        $this->load->view('footer');
+        }
+    
+    public function r_dashboard() {
+        $this->load->view('r_dashboard');
+        }
+
+    public function cms() {
+        $this->load->view('cms');
+        }
+        
+    public function adma() {
+        $this->load->view('adma');
+        }
+            
+    
 
     
     // functions
@@ -74,6 +123,16 @@ class Napwc extends CI_Controller {
     // [1] Show Table
 
     // show fieldtrip table in admin view
+    public function loginpro_admin($a = ''){
+        $this->load->view('loginpro_admin');
+
+        $data = array(
+            'item' => $this->Mod->show_fieldtrip($a)
+        );
+        
+    }
+
+
     public function admin_fieldtrip($a = ''){
         $this->load->view('admin_nav');
 
@@ -269,7 +328,7 @@ class Napwc extends CI_Controller {
         $keyword = $this->input->post('search_key');
         $data['item'] = $this->Mod->search_appointment($keyword);
         $this->load->view('admin_appointment', $data);
-
+ 
     }
 
     public function loginpro(){
@@ -285,7 +344,8 @@ class Napwc extends CI_Controller {
             );
             $result = $this->mod->loginpro($data['Email'], $data['Password']);
             if ($result) {
-                    $this->load->view('admin_nav');
+                    //$this->load->view('admin_nav');//
+                    $this->load->view('loginpro_admin');
             
             } else {
                 $this->load->view('header');
@@ -297,3 +357,6 @@ class Napwc extends CI_Controller {
 
 }
 ?>
+
+
+

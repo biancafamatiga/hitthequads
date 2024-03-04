@@ -1,20 +1,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Appointment</title>
     <style>
-             body {
-            background-image: url('https://pais.bmb.gov.ph/pas/bmb_assets2/img/website/slider/lagoon1.jpg'); 
-            background-size: cover;
-            background-repeat: no-repeat; 
-            margin: 0; 
-            padding: 0; 
-            backdrop-filter: blur(7px);
-            
+          body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #204c37; 
+            background: url('https://i.imgur.com/oFmr2Mu.png') center/cover no-repeat fixed;
+            background-image: rgba(32, 76, 55, 0.7);
+            padding-bottom:100px;
+        }
+
         }
       .container {
           background-color: rgba(255, 255, 255, 0.6);
           border-radius: 6px; 
           padding: 20px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
           max-width: 600px; 
           width: 100%;x
           
@@ -40,7 +41,32 @@
             border-radius: 5px;
             cursor: pointer;
         }
+      h1{
+            color:#204c37;
+            text-align:center;
+            font-weight:700;
+            padding-top:20px;
+            padding-bottom:25px;
+        }
         
+      h4{
+        text-align:center;
+      }
+      .container form button {
+            display: block;
+            margin: 0 auto; 
+            background-color: #789461;
+            border: none;
+            border-radius: 50px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .container form button:hover {
+            background-color: #50623A;
+        }
+
         .mb-4 {
             display: flex;
             align-items: center; 
@@ -63,11 +89,12 @@
 <body>
     
     </div>
+    <br>
     <h1> Appointment Reservation </h2>
       <!--form-->
       <div class="container"> 
        
-      <form action="http://localhost/quads/index.php/napwc/add_appointment" method = "post">
+      <form action="http://localhost/NAPWC/index.php/napwc/add_appointment" method = "post">
         <h4> Contact Information </h4>
   <div class="mb-3">
     <label for="name" class="form-label">Name</label>
@@ -108,9 +135,15 @@
         and I agree to comply with the rules and regulations of Ninoy Aquino Parks and Wildlife Center during my visit.
     </label>
   </div> -->
+  <div class="mb-3">
+    <label for="id_image" class="form-label">Upload ID Image</label>
+    <input type="file" class="form-control" name="id_image" id="id_image">
+    <small class="form-text text-muted">Please upload an image of your ID for validation purposes.</small>
+  </div>  
   <button type="submit" class="btn btn-primary" value="submit" name="submit">Submit</button>
 </form>
       </div>
 </div><br><br><br><br>
+
 </body>
 </html>

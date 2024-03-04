@@ -4,71 +4,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Admin Panel</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .admin_search {
             margin-bottom: 20px;
+        }
+
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        body {
+            margin-left: 290px;
+            margin-top: 60px;
+        }
+
+        .update-record-button {
+            position: fixed;
+            right: 20px;
+            background-color: #1B1A55;
+            border: 0px;
+            border-radius: 50px;
+            margin-right: 10px;
+            font-size: 18px;
+            padding: 8px;
+            width: 170px;
+        }
+
+        .btn-group .btn {
+            width: 140px;
+            height:33px;
+            border-radius: 50px;
+            padding-top:3px;
+        }
+
+        .btn-group .btn-success {
+            background-color: #436850;
+        }
+
+        .btn-group .btn-primary {
+            background-color: #0B60B0;
+        }
+
+        h1 {
+            color: #204c37;
+            text-align: center;
+            font-weight: 700;
+            padding-bottom: 20px;
+
         }
     </style>
 </head>
 
 <body>
     <?php require_once('admin_nav.php'); ?>
+    <h1>Fieldtrip Reservations</h1>
+
     <div class="container">
-        <div class="admin_search">
-            <form class="d-flex" role="search"
-                form action="http://localhost/quads/index.php/napwc/search_fieldtrip" method="post">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                    name="search_key">
-                <button class="btn btn-outline-success" type="submit" value="search" name="search">Search</button>
-            </form>
-        </div>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
                 <thead class="thead-dark">
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name of School /Organization</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Reference No</th>
                         <th scope="col">Contact Person</th>
-                        <th scope="col">Email Address</th>
-                        <th scope="col">Phone Number</th>
+                        <th scope="col">School/Organization</th>
                         <th scope="col">Date</th>
-                        <th scope="col">Time</th>
-                        <th scope="col">No. of Participants</th>
-                        <th scope="col">Grade Level</th>
-                        <th scope="col">Requests</th>
-                        <th scope="col">Actions</th>
+
                     </tr>
                 </thead>
                 <tbody>
-                    <!--loop-->
-                    <?php
-                    for ($i = 0; $i < sizeof($item); $i++) {
-                    ?>
-                        <tr>
-                            <td><?php echo urldecode($item[$i]->id); ?></td>
-                            <td><?php echo urldecode($item[$i]->name); ?></td>
-                            <td><?php echo urldecode($item[$i]->contactperson); ?></td>
-                            <td><?php echo urldecode($item[$i]->email); ?></td>
-                            <td><?php echo urldecode($item[$i]->phone); ?></td>
-                            <td><?php echo urldecode($item[$i]->date); ?></td>
-                            <td><?php echo urldecode($item[$i]->time); ?></td>
-                            <td><?php echo urldecode($item[$i]->participants); ?></td>
-                            <td><?php echo urldecode($item[$i]->gradelevel); ?></td>
-                            <td><?php echo urldecode($item[$i]->request); ?></td>
-                            <td>
-                                <a href="<?php echo 'http://localhost/quads/index.php/napwc/delete_fieldtrip/' . $item[$i]->id; ?>"
-                                    class="btn btn-danger btn-sm">Delete</a>
-                            </td>
-                        </tr>
-                    <?php } ?>
+                    <tr>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Approved
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">For Approval</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>REF123456</td>
+                        <td>Pini Lee</td>
+                        <td>FEU Tech</td>
+                        <td>2024-03-01</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Pending
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Approved</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>REF789012</td>
+                        <td>Jhong Hilarious</td>
+                        <td>University of the East</td>
+                        <td>2024-03-03</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Approved
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">For Approval</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>REF144456</td>
+                        <td>Annie No</td>
+                        <td>Mary Chiles College</td>
+                        <td>2024-03-11</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Approved
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">For Approval</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>REF123888</td>
+                        <td>Joseph Marco</td>
+                        <td>St.Mary's Academy</td>
+                        <td>2024-03-12</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Pending
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Approved</a></li>
+                                </ul>
+                            </div>
+                        </td>
+                        <td>REF781111</td>
+                        <td>Ysabel Ortega</td>
+                        <td>Pasig Science High School</td>
+                        <td>2024-03-03</td>
+                    </tr>
+
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- Bootstrap JS and any additional scripts -->
+    <button class="btn btn-primary update-record-button">Update Record</button>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-rLQU8wfZYg6aRq63t1N5/IOZVeV6SjlF8eZuAgP4W1qzDqAryuXVMO8aDc80Jgj9" crossorigin="anonymous">
     </script>

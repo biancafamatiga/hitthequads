@@ -120,7 +120,13 @@ class Mod extends CI_Model {
             return $query->row();
         }
         
-}
+    }
+
+
+    //reservation
+    //sign_up
+    //log_in
+    //3d
 }
 
 

@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Explore</title>
     <style>
+        body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #204c37; 
+        background: url('https://i.imgur.com/oFmr2Mu.png') center/cover no-repeat fixed;
+        background-image: rgba(32, 76, 55, 0.7);
+        }
+
         h1 {
             color: #204c37;
             text-align: center;
@@ -13,36 +22,50 @@
             padding-bottom: 10px;
         }
 
-        .image-container {
+        .container {
+            position: relative;
             display: flex;
-            justify-content: space-around;
-            margin: 20px;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .labell {
+        .image-container {
             display: flex;
-            justify-content: space-around;
-            margin: 20px;
+            justify-content: center;
+            position: relative;
         }
 
         .image-container img {
+            width: 100%;
+            height: 90%;
+            border-radius: 10px;
+            margin-bottom: 0;
+            display: block;
+        }
+
+        .image-container a {
             width: 30%;
-            height: auto;
-            border-radius: 20px;
-            margin-bottom: 10px;
+            display: inline-block;
+            text-decoration: none;
+            margin: 0 10px;
+            position: relative;
         }
 
         .image-container img:hover {
             transform: scale(0.9);
-            filter: blur(3px);
+            filter: blur(2px);
         }
 
         .image-label {
-            padding-left:40px;
             text-align: center;
-            font-weight:600;
-            color:#204c37;
-            margin-top:-10px;
+            font-weight: 600;
+            color: #204c37;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 5px 10px;
+            border-radius: 5px;
         }
 
         .button-container {
@@ -59,31 +82,28 @@
         }
 
         .button:hover {
-            background-color: #407a5e;
-            color:white;
+            background-color: #50623A;
+            color: white;
         }
 
     </style>
 </head>
 <body>
+    <br>
     <h1>EXPLORE</h1>
-
-    
-    <div class="image-container">
-        <img src="https://w0.peakpx.com/wallpaper/860/241/HD-wallpaper-little-bird-on-a-lotus-leaves-lotus-bird-flower-beautiful-pink.jpg" alt="flora 1">
-        <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2019/06/og-for-Ninoy-Aquino-Wildlife-Park.jpg" alt="fauna 2">
-        <img src="https://media-cdn.tripadvisor.com/media/photo-s/04/80/a1/7e/ninoy-aquino-parks-and.jpg" alt="attractions 3">
+    <div class="container">
+        <div class="image-container">
+            <a href="http://localhost/NAPWC/index.php/napwc/e_flora">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Donna_Aurora_and_it%27s_flower_in_Ninoy_Aquino_Parks_and_Wildlife_Center.jpg"
+                    alt="flora 1">
+                <div class="image-label">Flora</div>
+            </a>
+            <a href="http://localhost/NAPWC/index.php/napwc/e_attractions">
+                <img src="https://scontent.fmnl9-4.fna.fbcdn.net/v/t1.6435-9/202834395_3080514085516897_591595661660984194_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=7f8c78&_nc_eui2=AeFBnzEcfXSExJwksAJBQaPyDEWrgGcFSXMMRauAZwVJc5CsessZd9CGxQk5erM1EKlz1MQSCmaITLbw6HaZ0Vef&_nc_ohc=rwi2BOLXFisAX8QhNyV&_nc_ht=scontent.fmnl9-4.fna&oh=00_AfATDEwAaSF1-fv4cxqABuu42wIn5M7H-tIW95hnTw0gdQ&oe=66045191"
+                    alt="attractions 3">
+                <div class="image-label">Attractions</div>
+            </a>
+        </div>
     </div>
-
-    <div class="labell">
-        <div class="image-label">Flora</div>
-        <div class="image-label">Fauna</div>
-        <div class="image-label">Attractions</div>
-    </div>
-
-    <div class="button-container">
-        <button class="button">See 3D Interactive Map! ></button>
-    </div>
-   
 </body>
 </html>
